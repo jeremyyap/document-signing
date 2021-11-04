@@ -15,7 +15,7 @@ export class Seed {
   async seed() {
     const newUser = new User();
     newUser.email = "jeremy.yapjl@gmail.com";
-    newUser.username = "jeremyyap"
+    newUser.username = "Jeremy Yap"
     newUser.password = "password"
     this.usersService.add(newUser);
   }

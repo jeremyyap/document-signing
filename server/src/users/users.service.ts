@@ -17,7 +17,7 @@ export class UsersService {
     });
   }
 
-  async findOne(username: string): Promise<User | undefined> {
-    return this.usersRepository.findOne(undefined, { where: { username: username } });
+  async findOne(email: string): Promise<User | undefined> {
+    return this.usersRepository.findOne(undefined, { where: { email: email } });
   }
 }
