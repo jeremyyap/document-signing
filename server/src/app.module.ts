@@ -13,7 +13,8 @@ import { DatabaseModule } from 'database/database.module';
     TypeOrmModule.forRoot(),
     CommandModule,
     DatabaseModule,
-    UsersModule
+    UsersModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService, UsersService],
