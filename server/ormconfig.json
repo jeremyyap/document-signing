@@ -1,9 +1,0 @@
-{
-    "type": "mongodb",
-    "host": "localhost",
-    "port": 27017,
-    "database": "test",
-    "autoLoadEntities": true,
-    "entities": ["dist/**/*.entity.{ts,js}", "src/**/*.entity.{ts,js}"],
-    "synchronize": true
-}

@@ -16,4 +16,8 @@ export class UsersService {
       Logger.log(JSON.stringify(user));
     });
   }
+
+  async findOne(username: string): Promise<User | undefined> {
+    return this.usersRepository.findOne(undefined, { where: { username: username } });
+  }
 }
