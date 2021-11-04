@@ -1,5 +1,6 @@
 import { Entity, Column, ObjectIdColumn, BeforeInsert, Index } from 'typeorm';
 import * as bcrypt from "bcrypt";
+import { Logger } from '@nestjs/common';
 
 @Entity()
 export class User {
@@ -18,6 +19,7 @@ export class User {
 
   @BeforeInsert()
   async hashPassword() {
-    this.password = await bcrypt.hash(this.password, 10);  
+    this.password = await bcrypt.hash(this.password, 10);
+    Logger.log(this.password);
   }
 }
