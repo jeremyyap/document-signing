@@ -17,6 +17,6 @@ import { DatabaseModule } from 'database/database.module';
     AuthModule
   ],
   controllers: [AppController],
-  providers: [AppService, UsersService],
+  providers: [AppService],
 })
 export class AppModule {}
