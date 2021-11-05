@@ -11,10 +11,10 @@ export default function Login() {
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
   const handleSetShowPasswordChange = (e: ChangeEvent<HTMLInputElement>) => setShowPassword(e.target.checked);
 
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const handleLogin = () => {
     axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, { email, password }).then(response => {
-      if (response.status === 201 && response ?.data?.access_token) {
+      if (response.status === 201 && response?.data?.access_token) {
         setUser({
           accessToken: response.data.access_token,
           username: response.data.username,
