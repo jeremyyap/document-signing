@@ -27,3 +27,5 @@ export class User {
     this.password = await bcrypt.hash(this.password, 10);
   }
 }
+
+export type UserInfo = Pick<User, 'id' | 'username' | 'email'>;
