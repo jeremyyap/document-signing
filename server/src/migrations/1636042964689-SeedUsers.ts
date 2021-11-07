@@ -10,6 +10,18 @@ export class SeedUsers1636042964689 implements MigrationInterface {
         newUser.username = "Jeremy Yap"
         newUser.password = "$2b$10$dyK1WPVB2aazVsdJy1cuXO4kGovKhyx78fr7qWpzSZ0XqkaJcPsR." // "password"
         queryRunner.insertOne("user", newUser);
+
+        const newUser2 = new User();
+        newUser.email = "user2@example.com";
+        newUser.username = "User 2"
+        newUser.password = "$2b$10$dyK1WPVB2aazVsdJy1cuXO4kGovKhyx78fr7qWpzSZ0XqkaJcPsR." // "password"
+        queryRunner.insertOne("user", newUser2);
+
+        const newUser3 = new User();
+        newUser.email = "user3@example.com";
+        newUser.username = "User 3"
+        newUser.password = "$2b$10$dyK1WPVB2aazVsdJy1cuXO4kGovKhyx78fr7qWpzSZ0XqkaJcPsR." // "password"
+        queryRunner.insertOne("user", newUser3);
     }
 
     public async down(queryRunner: MongoQueryRunner): Promise<void> {
