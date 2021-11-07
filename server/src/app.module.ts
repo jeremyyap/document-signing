@@ -5,14 +5,15 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
-import { join } from 'path';
+import { DocumentsModule } from './documents/documents.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(),
     UsersModule,
-    AuthModule
+    AuthModule,
+    DocumentsModule
   ],
   controllers: [AppController],
   providers: [AppService],
