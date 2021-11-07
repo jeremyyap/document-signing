@@ -1,5 +1,12 @@
-import { Entity, Column, ObjectIdColumn, BeforeInsert, Index, ObjectID } from 'typeorm';
-import * as bcrypt from "bcrypt";
+import {
+  Entity,
+  Column,
+  ObjectIdColumn,
+  BeforeInsert,
+  Index,
+  ObjectID,
+} from 'typeorm';
+import * as bcrypt from 'bcrypt';
 
 @Entity()
 export class User {

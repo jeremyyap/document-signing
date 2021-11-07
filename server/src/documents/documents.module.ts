@@ -4,8 +4,8 @@ import { Document } from './document.entity';
 import { DocumentsService } from './documents.service';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Document])],
-    providers: [DocumentsService],
-    exports: [DocumentsService]
+  imports: [TypeOrmModule.forFeature([Document])],
+  providers: [DocumentsService],
+  exports: [DocumentsService],
 })
 export class DocumentsModule {}

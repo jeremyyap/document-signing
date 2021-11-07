@@ -13,7 +13,7 @@ import { DocumentsModule } from './documents/documents.module';
     TypeOrmModule.forRoot(),
     UsersModule,
     AuthModule,
-    DocumentsModule
+    DocumentsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

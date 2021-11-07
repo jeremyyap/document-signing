@@ -12,5 +12,5 @@ export class Document {
   owner: string;
 
   @Column()
-  assignees: Array<{ userID: string, signed: boolean }>;
+  assignees: Array<{ userID: string; signed: boolean }>;
 }
