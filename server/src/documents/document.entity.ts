@@ -1,4 +1,4 @@
-import { Entity, Column, ObjectIdColumn, ObjectID, Binary } from 'typeorm';
+import { Entity, Column, ObjectIdColumn, ObjectID } from 'typeorm';
 
 @Entity()
 export class Document {
@@ -6,7 +6,7 @@ export class Document {
   id: ObjectID;
 
   @Column()
-  file: Binary;
+  file: Buffer;
 
   @Column()
   owner: string;
