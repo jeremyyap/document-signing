@@ -16,6 +16,12 @@ export class User {
   @Index({ unique: true })
   email: string;
 
+  @Column()
+  owned_documents: string[];
+
+  @Column()
+  assigned_documents: string[];
+
   @BeforeInsert()
   async hashPassword() {
     this.password = await bcrypt.hash(this.password, 10);
