@@ -4,23 +4,26 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { UserProvider } from './UserProvider';
 import Login from './Login';
 import Documents from './documents';
 import Dashboard from './documents/dashboard';
+import { AxiosProvider } from './providers/AxiosProvider';
+import { UserProvider } from './providers/UserProvider';
 
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="login" element={<Login />} />
-          <Route path="documents" element={<Documents />}>
-            <Route index element={<Dashboard />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <AxiosProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="login" element={<Login />} />
+            <Route path="documents" element={<Documents />}>
+              <Route index element={<Dashboard />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </AxiosProvider>
     </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')

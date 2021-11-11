@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { ChangeEvent, useContext, useState } from 'react';
-import { UserContext } from './UserProvider';
+import { useAxios } from './providers/AxiosProvider';
+import { UserContext } from './providers/UserProvider';
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,6 +12,7 @@ export default function Login() {
   const handleSetShowPasswordChange = (e: ChangeEvent<HTMLInputElement>) => setShowPassword(e.target.checked);
 
   const { setUser } = useContext(UserContext);
+  const axios = useAxios();
   const handleLogin = () => {
     axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, { email, password }).then(response => {
       if (response.status === 201 && response?.data?.access_token) {
@@ -20,9 +21,6 @@ export default function Login() {
           username: response.data.username,
           email
         });
-        console.log(email);
-        console.log(password);
-        console.log(response);
       } else {
         alert("Invalid username or password");
       }
